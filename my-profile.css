@@ -1,0 +1,14 @@
+/* Change the color of h1 */
+h1.person-name {
+    color: red;
+}
+
+ul.my-details {
+    border: medium dashed burlywood;
+    transition-property: background-color;
+    transition-duration: 4s;
+}
+
+ul.my-details:hover {
+    background-color: lightseagreen ;
+}
