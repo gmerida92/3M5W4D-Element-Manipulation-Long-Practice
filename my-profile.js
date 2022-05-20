@@ -17,16 +17,17 @@ window.addEventListener('DOMContentLoaded', (event) => {
   // list.innerHTML = '<li>Age: 100</li>' + '<li>Location: Los Angeles</li>' + '<li>Occupation: Actor</li>' + '<li>Favorite Companion: Mrs. Potato Head</li>'
   document.body.appendChild(list)
 
+
   // make an array with strings to place in list items
-  let listItems = ['Age: 100', 'Location: Los Angeles', 'Occupation: Actor', 'Favorite Companion: Mrs. Potato Head', 'Favorite Movie: Toy Story', 'Favorite Ice Cream: Chocolate',"Social-Security: xxx-xx-8989"]
-  
+  let listItems = ['Age: 100', 'Location: Los Angeles', 'Occupation: Actor', 'Favorite Companion: Mrs. Potato Head', 'Favorite Movie: Toy Story', 'Favorite Ice Cream: Chocolate',"Social-Security: xxx-xx-8989", ]
+
   // for (let i = 0; i < listItems.length; i++) {
   //   let newListItem = document.createElement("li");
   //   newListItem.innerText = list[i];
   //   document.querySelector("ul").appendChild(newListItem);
   // }
-  
-  
+
+
   addToPersonalList(listItems);
 
   // // length of ul element
@@ -47,7 +48,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
   //   // append new item to ul
   //   document.querySelector("ul").appendChild(newItem)
-  
+
   // Creates list element
   // Passes in the string as the innerText
   // Appends new element to the ul
@@ -56,13 +57,18 @@ window.addEventListener('DOMContentLoaded', (event) => {
   h1.setAttribute("class", "person-name");
   list.setAttribute("class", "my-details");
   document.body.querySelectorAll('li').forEach(el => el.setAttribute("class", "detail"));
-  
 
+  let clock = document.createElement('div');
+  document.body.appendChild(clock);
+  const time = () => {
+    const date = new Date();
+    const seconds = date.getSeconds();
+    const minutes = date.getMinutes();
+    const hours = date.getHours();
 
-  
-  
-  
-  
+    clock.innerHTML = hours + ":" + minutes + ":" + seconds;
+  }
+  setInterval(time, 1000);
 });
 
 
